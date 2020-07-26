@@ -48,6 +48,12 @@ body {
   margin-top: 100px;
 }
 
+.register_form {
+  width: 300px;
+  float: right;
+  margin-top: 10px;
+}
+
 .input_txt {
   width: 300px;
   height: 45px;

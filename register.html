@@ -685,14 +685,23 @@
             </div>
 
             <div class="rightpane">
-                <form class="login_form" action="server.php" method="post">
+                <form class="register_form" action="server.php" method="post">
                     <div class="sub_heading">Register</div>
                     <input class="input_txt" type="text" name="htno" placeholder="Hall Ticket Number / Admin Id"
                         autocomplete="off"> <br>
                     <input class="input_txt" type="text" name="name" placeholder="Full Name" autocomplete="off"> <br>
+                    <input class="input_txt" type="text" name="mobile" placeholder="Mobile Nmber" autocomplete="off">
+                    <br>
+                    <input class="input_txt" type="text" name="email" placeholder="Email ID" autocomplete="off"> <br>
+                    <!-- <input class="input_txt" type="text" name="role" placeholder="Role" autocomplete="off"> <br> -->
+                    <select name="role" class="input_txt">
+                        <!-- <option value="0"> <span style="color: #cacaca;"> -- Select a role --</span></option> -->
+                        <option value="1">Student</option>
+                        <option value="2">Admin</option>
+                    </select>
                     <input class="input_txt" type="password" name="password" placeholder="Password" autocomplete="off">
                     <br>
-                    <input class="sbt_btn" type="submit" name="submit">
+                    <button class="sbt_btn" name="register">Register</button>
                     <p>Already have an account? <span style="color:#ff5f5f; font-weight: 700;"><a class="links"
                                 href="index.html"> Login</a></span>
                     </p>
