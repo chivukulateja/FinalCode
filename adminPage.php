@@ -1,5 +1,5 @@
 <?php
-include 'server.php';
+include 'header.php';
 // session_start();
 
 ?>
@@ -14,14 +14,15 @@ include 'server.php';
     </head>
 
     <body>
-        <h1>Hi I'm Admin</h1>
-        <p style="font-size:30px; color: #000"><?php echo $_SESSION['user'];
-?> </p>
-
-        <a href="logout.php"> <input type='button' value='Logout'></a>
-
-        <!-- <a href="studentsData.php"> <input type='button' value='Students'></a> -->
-        <button class='sbt_btn' name='studentData'> <a href='studentsData.php'>Students</a> </button>
+        <h1 class='main_heading'>Admin Portal</h1>
+        <p style='text-align:center; font-size:25px'>This is the website where admin can add students, payments and
+            issue transfer certificate</p>
+        <div class='btn_div'>
+            <button class='clk_btn' name='studentData'> <a href='addstudent.php'>Add Students</a> </button>
+            <button class='clk_btn' name='studentData'> <a href='paymentData.php'>Payments</a> </button>
+            <button class='clk_btn' name='studentData'> <a href='transferData.php'>Transfer Certificates</a> </button>
+            <button class='clk_btn' name='studentData'> <a href='studentsData.php'>Manage Admins</a> </button>
+        </div>
     </body>
 
 </html>

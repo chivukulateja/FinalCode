@@ -77,5 +77,40 @@ if ( $con ) {
     }
     // Register Screen Ends
 
+    if ( isset( $_POST['register'] ) ) {
+
+        $htno = $_POST['htno'];
+        $name = $_POST['name'];
+        $mobile = $_POST['mobile'];
+        $email = $_POST['email'];
+        $role = $_POST['role'];
+        $pwd = md5( $_POST['password'] );
+
+        $checkAccount = "SELECT * from users_data where id='$htno'";
+        $row = mysqli_query( $con, $checkAccount );
+        // var_dump( $checkAccount );
+
+        if ( mysqli_num_rows( $row )>0 ) {
+            echo 'Account already exists';
+            header( 'location: index.php' );
+        } else {
+
+            $createAccount = "INSERT INTO `users_data`(`id`, `name`, `mobile`, `email`, `role`, `password`) VALUES ('$htno', '$name', $mobile, '$email', $role, '$pwd' )";
+            $row = mysqli_query( $con, $createAccount );
+            if ( $role == 1 ) {
+                $data = mysqli_fetch_assoc( $row );
+                $_SESSION['user'] = $data['name'] ;
+                header( 'location: studentPage.php' );
+                // $_SESSION['user'] = $_POST['name'] ;
+            } else  if ( $role == 2 ) {
+                $data = mysqli_fetch_assoc( $row );
+                $_SESSION['user'] = $data['name'] ;
+                header( 'location: adminPage.php' );
+
+            }
+
+        }
+    }
+
 }
 ?>

@@ -2,13 +2,16 @@
 // session_start();
 include 'header.php';
 
-$checkAccount = 'SELECT * from users_data where role = 1';
-$row = mysqli_query( $con, $checkAccount );
-
-$nums = mysqli_num_rows( $row );
 ?>
 <h1 class='main_heading'> Students Data</h1>
-
+<p style=''>
+    <lable>Choose course</lable>
+    <select name='' class='input_course'>
+        <option value='1'>Bachelor of Commerce - General</option>
+        <option value='2'>Bachelor of Commerce - Honours</option>
+        <option value='3'>Bachelor of Computer Science</option>
+    </select>
+</p>
 <table>
 
     <thead>
@@ -24,7 +27,10 @@ $nums = mysqli_num_rows( $row );
     </thead>
 
     <?php
+$checkAccount = 'SELECT * from users_data where role = 1';
+$row = mysqli_query( $con, $checkAccount );
 
+$nums = mysqli_num_rows( $row );
 while( $data = mysqli_fetch_array( $row ) )
  {
     ?>
