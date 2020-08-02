@@ -112,5 +112,33 @@ if ( $con ) {
         }
     }
 
+    if ( isset( $_POST['addstud'] ) ) {
+
+        $a = $_POST['a'];
+        $b = $_POST['b'];
+        $c = $_POST['c'];
+        $d = $_POST['d'];
+        $e = $_POST['e'];
+        $f = $_POST['f'];
+        $g = $_POST['g'];
+        $h = $_POST['h'];
+        $i = $_POST['i'];
+        $j = $_POST['j'];
+
+        $checkAccount = "SELECT * from users_data where id='$b'";
+        $row = mysqli_query( $con, $checkAccount );
+        // var_dump( $checkAccount );
+
+        if ( mysqli_num_rows( $row )>0 ) {
+            echo 'Account already exists';
+        } else {
+
+            $createAccount = "INSERT INTO `users_data`(`id`, `name`, `mobile`, `email`, `role`, `password`) VALUES ('$htno', '$name', $mobile, '$email', $role, '$pwd' )";
+            $row = mysqli_query( $con, $createAccount );
+
+        }
+
+    }
 }
+
 ?>

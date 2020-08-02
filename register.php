@@ -703,7 +703,7 @@
                     <br>
                     <button class="sbt_btn" name="register">Register</button>
                     <p>Already have an account? <span style="color:#ff5f5f; font-weight: 700;"><a class="links"
-                                href="index.html"> Login</a></span>
+                                href="index.php"> Login</a></span>
                     </p>
                 </form>
             </div>
