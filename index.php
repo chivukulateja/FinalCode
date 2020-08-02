@@ -695,7 +695,7 @@
                     <!-- <input class="sbt_btn" type="button" name="signIn"> -->
                     <button class="sbt_btn" name="login"> Login </button>
                     <p>Don't have an account? <span style="color:#ff5f5f; font-weight: 700;"><a class="links"
-                                href="register.php"> Register</a></span>
+                                href="register.php  "> Register</a></span>
                     </p>
                 </form>
             </div>
