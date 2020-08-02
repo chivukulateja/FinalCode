@@ -155,3 +155,13 @@ svg#freepik_stories-plain-credit-card.animated #freepik--Character--inject-49 {
 }
 
 /* SVG Animation Code Ends */
+
+.tabbody tr td {
+  border: 0px solid #494949;
+  width: 200px;
+  height: 50px;
+}
+
+table {
+  margin: 100px;
+}

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Create connection
 $con = mysqli_connect( '127.0.0.1', 'root', '', 'feetech' );
 
@@ -15,14 +17,20 @@ if ( $con ) {
         $row = mysqli_query( $con, $checkAccount );
 
         if ( mysqli_num_rows( $row )>0 ) {
-            header( 'location: studentPage.html' );
+            $data = mysqli_fetch_assoc( $row );
+            $_SESSION['user'] = $data['name'] ;
+            header( 'location: studentPage.php' );
+
         } else {
             $checkAccount = "SELECT * from users_data where id='$htno' AND password='$pwd' AND role = 2";
             $row = mysqli_query( $con, $checkAccount );
 
             if ( mysqli_num_rows( $row )>0 ) {
+                $data = mysqli_fetch_assoc( $row );
+                $_SESSION['user'] = $data['name'] ;
+                // var_dump( $data['name'] );
 
-                header( 'location: adminPage.html' );
+                header( 'location: adminPage.php' );
             } else {
                 header( ' location: error.html' );
 
@@ -48,15 +56,20 @@ if ( $con ) {
 
         if ( mysqli_num_rows( $row )>0 ) {
             echo 'Account already exists';
-            header( 'location: index.html' );
+            header( 'location: index.php' );
         } else {
 
             $createAccount = "INSERT INTO `users_data`(`id`, `name`, `mobile`, `email`, `role`, `password`) VALUES ('$htno', '$name', $mobile, '$email', $role, '$pwd' )";
             $row = mysqli_query( $con, $createAccount );
             if ( $role == 1 ) {
-                header( 'location: studentPage.html' );
-            } else {
-                header( 'location: AdminPage.html' );
+                $data = mysqli_fetch_assoc( $row );
+                $_SESSION['user'] = $data['name'] ;
+                header( 'location: studentPage.php' );
+                // $_SESSION['user'] = $_POST['name'] ;
+            } else  if ( $role == 2 ) {
+                $data = mysqli_fetch_assoc( $row );
+                $_SESSION['user'] = $data['name'] ;
+                header( 'location: adminPage.php' );
 
             }
 
@@ -65,5 +78,4 @@ if ( $con ) {
     // Register Screen Ends
 
 }
-
 ?>
