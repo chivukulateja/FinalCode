@@ -44,7 +44,7 @@ function filterTable( $query )
 
         td {
             width: 400px;
-            text-alignment: center;
+            text-align: center;
             text-teansform: uppercase;
         }
         </style>
