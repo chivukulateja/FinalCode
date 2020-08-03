@@ -1,12 +1,13 @@
 <?php
 include 'header.php';
+
 ?>
 
 <body>
 
     <h1 class='main_heading'> Add Student Details</h1>
 
-    <form action='server.php' style='margin-left:250px;  width:75%; margin-top:100px'>
+    <form action='server.php' method='POST' style='margin-left:250px;  width:75%; margin-top:100px'>
         <input type='text' class='input_stxt' style='width:660px' name='a' placeholder='Name'>
         <input type='text' class='input_stxt' style='margin-left:50px' name='b' placeholder='Hall Ticket Number'> <br>
         <input type='text' class='input_stxt' name='c' placeholder="Father's Name">
